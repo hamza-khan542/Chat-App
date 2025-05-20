@@ -88,13 +88,6 @@ io.on('connection', (socket) => {
   });
 });
 
-// Every 10 seconds, clear the chat for everyone
-setInterval(() => {
-  messageHistory.length = 0; // Clear the array in-place
-  io.emit('clearChat');
-  console.log('Chat cleared for all users');
-}, 10000);
-
 const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
